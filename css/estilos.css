@@ -1,0 +1,521 @@
+/* ==========================================================================
+   VARIABLES Y CONFIGURACIÓN INICIAL
+   ========================================================================== */
+:root {
+    /* Transformación de los colores proporcionados a valores HEX exactos */
+    --color-principal: #5E5E60;       /* Gris medio oscuro */
+    --color-secundario: #777779;      /* Gris medio claro */
+    --color-complementario: #4D4D4F;  /* Gris profundo */
+    --color-fondo: #020204;           /* Negro / Fondo oscuro */
+    --color-tarjeta: #121216;         /* Color para contenedores y tarjetas */
+    --color-texto: #FFFFFF;           /* Texto blanco para contraste */
+    --color-texto-secundario: #CCCCCC;/* Texto secundario suavizado */
+    
+    /* Tipografías requeridas */
+    --fuente-titulos: Helvetica, Arial, sans-serif;
+    --fuente-textos: Arial, sans-serif;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente-textos);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-texto);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   1. ENCABEZADO (HEADER)
+   ========================================================================== */
+.encabezado {
+    background-color: var(--color-principal);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: var(--color-texto);
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.menu li a {
+    color: var(--color-texto);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.menu li a:hover {
+    background-color: var(--color-secundario);
+}
+
+/* ==========================================================================
+   2. HERO
+   ========================================================================== */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 30px;
+    background-color: var(--color-tarjeta);
+    gap: 30px;
+}
+
+.hero-columna-texto {
+    flex: 1;
+}
+
+.etiqueta-emprendimiento {
+    background-color: var(--color-complementario);
+    color: var(--color-texto);
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.hero-columna-texto h2 {
+    font-size: 36px;
+    margin: 15px 0;
+    color: var(--color-texto);
+}
+
+.hero-columna-texto p {
+    font-size: 16px;
+    color: var(--color-texto-secundario);
+    margin-bottom: 25px;
+}
+
+.hero-columna-imagen {
+    flex: 1;
+}
+
+.hero-columna-imagen img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.boton-principal {
+    display: inline-block;
+    background-color: var(--color-secundario);
+    color: var(--color-texto);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.boton-principal:hover {
+    background-color: var(--color-complementario);
+}
+
+/* ==========================================================================
+   3. SECCIÓN NOSOTROS
+   ========================================================================== */
+.nosotros {
+    display: flex;
+    align-items: center;
+    padding: 60px 30px;
+    gap: 40px;
+}
+
+.nosotros-imagen {
+    flex: 1;
+}
+
+.nosotros-imagen img {
+    border-radius: 8px;
+}
+
+.nosotros-texto {
+    flex: 1;
+}
+
+.nosotros-texto h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--color-secundario);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.nosotros-texto p {
+    margin-bottom: 15px;
+    color: var(--color-texto-secundario);
+}
+
+/* ==========================================================================
+   4. PRODUCTOS O SERVICIOS
+   ========================================================================== */
+.productos {
+    padding: 60px 30px;
+    background-color: var(--color-tarjeta);
+    text-align: center;
+}
+
+.productos h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.productos-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.tarjeta {
+    background-color: var(--color-fondo);
+    border: 1px solid var(--color-complementario);
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tarjeta:hover {
+    border-color: var(--color-secundario);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.tarjeta h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.tarjeta p {
+    font-size: 14px;
+    color: var(--color-texto-secundario);
+    margin-bottom: 15px;
+}
+
+.tarjeta .precio {
+    font-weight: bold;
+    color: var(--color-texto);
+    margin-bottom: 15px;
+}
+
+.boton-tarjeta {
+    background-color: var(--color-principal);
+    color: var(--color-texto);
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.boton-tarjeta:hover {
+    background-color: var(--color-secundario);
+}
+
+/* ==========================================================================
+   5. BENEFICIOS O SERVICIOS
+   ========================================================================== */
+.beneficios {
+    padding: 60px 30px;
+    text-align: center;
+}
+
+.beneficios h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.beneficios-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.beneficio-caja {
+    background-color: var(--color-tarjeta);
+    border-radius: 8px;
+    padding: 25px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    border-top: 4px solid var(--color-secundario);
+}
+
+.beneficio-caja .icono {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.beneficio-caja h3 {
+    margin-bottom: 10px;
+}
+
+.beneficio-caja p {
+    color: var(--color-texto-secundario);
+    font-size: 14px;
+}
+
+/* ==========================================================================
+   6. TABLA DE PRECIOS Y SERVICIOS
+   ========================================================================== */
+.seccion-tabla {
+    padding: 60px 30px;
+    background-color: var(--color-tarjeta);
+    text-align: center;
+}
+
+.seccion-tabla h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: var(--color-fondo);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid var(--color-complementario);
+}
+
+th {
+    background-color: var(--color-principal);
+    color: var(--color-texto);
+    font-family: var(--fuente-titulos);
+}
+
+tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================================================================
+   7. GALERÍA
+   ========================================================================== */
+.galeria {
+    padding: 60px 30px;
+    text-align: center;
+}
+
+.galeria h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.galeria-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.galeria-contenedor img {
+    width: calc(33.333% - 20px);
+    min-width: 250px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.galeria-contenedor img:hover {
+    opacity: 0.8;
+}
+
+/* ==========================================================================
+   8. FORMULARIO DE CONTACTO
+   ========================================================================== */
+.contacto {
+    padding: 60px 30px;
+    background-color: var(--color-tarjeta);
+    text-align: center;
+}
+
+.contacto h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.contacto-subtitulo {
+    color: var(--color-texto-secundario);
+    margin-bottom: 30px;
+}
+
+.formulario-contacto {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.campo-formulario label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.campo-formulario input,
+.campo-formulario select,
+.campo-formulario textarea {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--color-complementario);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente-textos);
+}
+
+.campo-formulario input:focus,
+.campo-formulario select:focus,
+.campo-formulario textarea:focus {
+    outline: none;
+    border-color: var(--color-secundario);
+}
+
+.boton-enviar {
+    background-color: var(--color-principal);
+    color: var(--color-texto);
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.boton-enviar:hover {
+    background-color: var(--color-secundario);
+}
+
+/* ==========================================================================
+   9. PIE DE PÁGINA (FOOTER)
+   ========================================================================== */
+.pie-pagina {
+    background-color: var(--color-principal);
+    padding: 40px 30px 20px 30px;
+}
+
+.pie-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto 30px auto;
+}
+
+.pie-columna {
+    flex: 1;
+    min-width: 250px;
+}
+
+.pie-columna h3 {
+    margin-bottom: 15px;
+}
+
+.pie-columna p {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.derechos-autor {
+    text-align: center;
+    border-top: 1px solid var(--color-secundario);
+    padding-top: 15px;
+    font-size: 13px;
+}
+
+/* ==========================================================================
+   DISEÑO RESPONSIVE (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Menú vertical en móviles */
+    .encabezado {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Hero pasa a una sola columna */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Nosotros pasa a una columna */
+    .nosotros {
+        flex-direction: column;
+    }
+
+    /* Ajuste de galería a una columna */
+    .galeria-contenedor img {
+        width: 100%;
+    }
+
+    /* Tarjetas y beneficios ocupan ancho completo */
+    .tarjeta {
+        width: 100%;
+    }
+
+    .pie-contenedor {
+        flex-direction: column;
+        text-align: center;
+    }
+}
